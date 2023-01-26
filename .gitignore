@@ -2,5 +2,5 @@
 # This .gitignore file was automatically created by Microsoft(R) Visual Studio.
 ################################################################################
 
-/week2/.vs
-/week2/out/build
+/.vs
+/out
