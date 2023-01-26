@@ -1,0 +1,3 @@
+C:/College_23W/C++/Cplusplus_23W/week2/out/build/x64-Debug/CMakeFiles/hello.dir
+C:/College_23W/C++/Cplusplus_23W/week2/out/build/x64-Debug/CMakeFiles/edit_cache.dir
+C:/College_23W/C++/Cplusplus_23W/week2/out/build/x64-Debug/CMakeFiles/rebuild_cache.dir
