@@ -29,12 +29,14 @@ public:
 	}
 
 	~Car() {
-		cout << "In deconstructor" << endl;
+		cout << "In destructor" << endl;
 	}
 };
 
 int main(int argc, char **argv)
 {
-   cout << "Hello World!" << endl;
+
+	CST8219::Car myVehicule;
+   cout << "I made a car!" << endl;
    return 0;
 }
