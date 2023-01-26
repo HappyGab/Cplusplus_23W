@@ -8,22 +8,28 @@ namespace CST8219 {
 
 class CST8219::Car{
 
-	int numWheels;
-	int numDoors;
+	int numWheels = 0;
+	int numDoors = 0;
 
-public:
-	Car() {
-
+public: 
+	Car() : Car(4){
+		cout << "In constructor with 0 parameters" << endl;
 	}
 
-	Car(int w) {
-
+	Car(int w) : Car(w, 4) {
+		cout << "In constructor with 1 parameters" << endl;
 	}
 
 	Car(int w, int d) {
 
 		numWheels = w;
 		numDoors = d;
+
+		cout << "In constructor with 2 parameters" << endl;
+	}
+
+	~Car() {
+		cout << "In deconstructor" << endl;
 	}
 };
 
