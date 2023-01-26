@@ -36,7 +36,7 @@ public:
 int main(int argc, char **argv)
 {
 
-	CST8219::Car myVehicule;
+	CST8219::Car myVehicule(4);
    cout << "I made a car!" << endl;
    return 0;
 }
