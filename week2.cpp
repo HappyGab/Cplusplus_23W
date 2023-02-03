@@ -33,10 +33,41 @@ public:
 	}
 };
 
-int main(int argc, char **argv)
+using namespace CST8219;
+
+int main(int argc, char** argv)
 {
 
-	CST8219::Car myVehicule(4,2);
-   cout << "I made a car!" << endl;
+	Car car1; // This calls constructor Car ()
+	Car car2(4); //This calls constructor Car (int);
+	Car car3(4, 2); //This calls constructor Car( int, int);
+
+	cout << "Vehicle takes" << sizeof(car1) << endl;
+	cout << "Vehicle takes" << sizeof(car2) << endl;
+	cout << "Vehicle takes" << sizeof(car3) << endl;
+
+
+	char quit = 'n';
+
+	Car* pCar = new Car();
+
+	while (quit != 'q') {
+
+		pCar->~Car();
+
+		int d;
+		int w;
+
+		cout << "enter number of doors" << endl;
+		cin >> d;
+		cout << "enter number of wheels" << endl;
+		cin >> w;
+
+		pCar = new Car(w, d);
+
+		cout << "enter q to quit, anything else to make another car" << endl;
+		cin >> quit;
+	}
+
    return 0;
 }
