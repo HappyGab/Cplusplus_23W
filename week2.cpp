@@ -53,15 +53,26 @@ int main(int argc, char** argv)
 
 	while (quit != 'q') {
 
-		pCar->~Car();
+		delete(pCar);
 
 		int d;
 		int w;
 
 		cout << "enter number of doors" << endl;
 		cin >> d;
+		while (!(cin >> d)) {
+			cout << "Error! please enter a number" << endl;
+			cin.clear();
+			cin.ignore(256, '\n');
+		}
+		
 		cout << "enter number of wheels" << endl;
 		cin >> w;
+		while (!(cin >> w)) {
+			cout << "Error! please enter a number" << endl;
+			cin.clear();
+			cin.ignore(256, '\n');
+		}
 
 		pCar = new Car(w, d);
 
