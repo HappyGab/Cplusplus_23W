@@ -1,84 +1,23 @@
 
-#include<iostream>
-using namespace std;
+#include"Car.h"
 
-namespace CST8219 {
-	class Car;
+void CreateCar(Car& v, int w = 4, int d = 2) {
+	
+	v.setWheels(w);
+	v.setDoors(d);
 }
-
-class CST8219::Car{
-
-	int numWheels = 0;
-	int numDoors = 0;
-
-public: 
-	Car() : Car(4){
-		cout << "In constructor with 0 parameters" << endl;
-	}
-
-	Car(int w) : Car(w, 4) {
-		cout << "In constructor with 1 parameters" << endl;
-	}
-
-	Car(int w, int d) {
-
-		numWheels = w;
-		numDoors = d;
-
-		cout << "In constructor with 2 parameters" << endl;
-	}
-
-	~Car() {
-		cout << "In destructor" << endl;
-	}
-};
-
-using namespace CST8219;
 
 int main(int argc, char** argv)
 {
-
-	Car car1; // This calls constructor Car ()
-	Car car2(4); //This calls constructor Car (int);
-	Car car3(4, 2); //This calls constructor Car( int, int);
-
-	cout << "Vehicle takes" << sizeof(car1) << endl;
-	cout << "Vehicle takes" << sizeof(car2) << endl;
-	cout << "Vehicle takes" << sizeof(car3) << endl;
-
-
-	char quit = 'n';
-
-	Car* pCar = new Car();
-
-	while (quit != 'q') {
-
-		delete(pCar);
-
-		int d;
-		int w;
-
-		cout << "enter number of doors" << endl;
-		cin >> d;
-		while (!(cin >> d)) {
-			cout << "Error! please enter a number" << endl;
-			cin.clear();
-			cin.ignore(256, '\n');
-		}
-		
-		cout << "enter number of wheels" << endl;
-		cin >> w;
-		while (!(cin >> w)) {
-			cout << "Error! please enter a number" << endl;
-			cin.clear();
-			cin.ignore(256, '\n');
-		}
-
-		pCar = new Car(w, d);
-
-		cout << "enter q to quit, anything else to make another car" << endl;
-		cin >> quit;
-	}
-
-   return 0;
+	Car original; //empty constructor no ( )
+	Car copy(original); // copy constructor by reference
+	Car secondCopy(&original); //copy constructor by pointer
+	copy.printVehicle();
+	CreateCar(copy, 2); //wheels is 2, everything else is default value
+	copy.printVehicle();
+	CreateCar(copy, 2, 3); //wheels is 2, doors is 3
+	copy.printVehicle();
+	copy = secondCopy;
+	copy.printVehicle(); // copy is same as second copy
+	return 0;
 }
